@@ -58,17 +58,28 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-
+  "use strict"
   var keys = document.querySelectorAll('div .key')
+
+  function removeTransition(e) {
+    if (e.propertyName !== 'transform') return // skip if the transition is not on 'transform' property, avoids the 5 other transitions...
+    this.classList.remove('playing')
+  }
+
   var printLetter = function(e) {
-    if (e.key !== undefined){
-      for (var i = 0; i < keys.length; i++){
-        if (e.keyCode === parseInt(keys[i].dataset.key)){
-          // backticks enable the interpolation here (thanks to ES6)
-          document.querySelector(`audio[data-key="${e.keyCode}"]`).play()
-        }
-      }
+    var key = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+    if (key) {
+      // resets sound each time a key is pressed, spam-friendly 😎
+      key.currentTime = 0
+      key.play()
+
+      var animateBloc = document.querySelector(`div[data-key="${e.keyCode}"]`)
+      animateBloc.classList.add('playing')
     }
+  }
+
+  for(var i = 0; i < keys.length; i++){
+    keys[i].addEventListener('transitionend', removeTransition) // we enter this function everytime a css property is finishing it's transition
   }
 
   window.addEventListener('keydown', printLetter)
