@@ -79,7 +79,6 @@
     document.querySelector('.min-hand').style.transform = `rotate(${defaultRotation + minutes}deg)`
 
     var seconds = date.getSeconds() * 6
-    console.log(seconds)
     if (seconds === 0) {
       document.querySelector('.second-hand').style.transition = 'none'
       document.querySelector('.second-hand').style.transform = `rotate(${defaultRotation + seconds}deg)`
