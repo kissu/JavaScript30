@@ -34,5 +34,3 @@ inventors.sort((a, b) => (b['passed'] - b['year']) - (a['passed'] - a['year']))
 ```
 The 2 codes above are for a sorting of people (by how much they lived).
 The 2 ways are ofc correct, just a preference.
-
-### Minor stuff 
