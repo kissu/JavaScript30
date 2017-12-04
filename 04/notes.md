@@ -3,6 +3,12 @@ The goal here was to make some practice with basic methods of JavaScript like
   map, sort, filter and so on.
 
 ### What I learned
+:exclamation: If you want to use `reduce`, map and so on, don't forget to
+  convert nodelists to array by doing:
+- `Array.from(document.querySelectorAll)`
+- `[...(document.querySelectorAll)] (es6 way)`
+
+Reminder of some useful methods:
 - `reduce` is pretty much used to make some computation on a lot of stuff.
 
 But faster and in a cleaner way.
@@ -33,4 +39,5 @@ mine ↵
 inventors.sort((a, b) => (b['passed'] - b['year']) - (a['passed'] - a['year']))
 ```
 The 2 codes above are for a sorting of people (by how much they lived).
+
 The 2 ways are ofc correct, just a preference.
