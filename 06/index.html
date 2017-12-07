@@ -21,6 +21,9 @@ const cities = []
 fetch(endpoint)
   .then(http => http.json())
   .then(data => cities.push(...data))
+  .catch(err => {
+    console.log(err);
+  })
 
 function findMatches(wordToMatch, cities) {
   return cities.filter(place => {
