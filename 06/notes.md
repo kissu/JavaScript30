@@ -7,6 +7,7 @@ Basic one but super important, you **CAN** add values to a `const`. A `const`
 
 ```js
   const tab = []; tab.push(3) // allowed
+  const tab = []; tab[0] = 3 // allowed too !
   const tab = []; tab = [3] // forbidden
 ```
 
