@@ -6,6 +6,8 @@ The aim is to make a board like we're drawing in it. :D
   canvas to not permanently trigger the action but reset it instead.
 `ctx.stroke()` is the main thing that draw lines !
 
+`hsl`'s hue allow to not take into account values > 360, it will loop by itself.
+
 ### Small stuff
 `canvas.width = window.innerWidth` helps to fit the canvas to the maximum width
   of the viewport (excluding the vertical scrollbar).

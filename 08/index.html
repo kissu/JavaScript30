@@ -12,8 +12,9 @@
   canvas.width = window.innerWidth - 10
   canvas.height = window.innerHeight - 10
   ctx.strokeStyle = 'teal'
-  ctx.lineJoin = 'round'
-  ctx.lineCap = 'round'
+  ctx.lineCap = 'round' // the "edge" (terminus) of the line
+  ctx.lineJoin = 'miter'
+  ctx.lineWidth = 5
 
   let isDrawing = false;
   let lastX = 0
@@ -21,17 +22,21 @@
 
   function draw(e){
     if(!isDrawing) return
-    console.log(e)
     ctx.beginPath()
     ctx.moveTo(lastX, lastY)
     ctx.lineTo(e.offsetX, e.offsetY)
     ctx.stroke()
-    ;[lastX, lastY] = [e.offsetX, e.offsetY]
+    ;[lastX, lastY] = [e.offsetX, e.offsetY] // needed to make the lines "move"
   }
+
+  canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true
+    ;[lastX, lastY] = [e.offsetX, e.offsetY] // not to start from x= 0 & y= 0
+  })
   canvas.addEventListener('mousemove', draw)
-  canvas.addEventListener('mousedown', () => isDrawing = true)
   canvas.addEventListener('mouseup', () => isDrawing = false)
   canvas.addEventListener('mouseout', () => isDrawing = false)
+
 </script>
 
 <style>
