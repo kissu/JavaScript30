@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+<canvas id="draw" width="800" height="800"></canvas>
+<script>
+  const canvas = document.querySelector('#draw')
+  const ctx = canvas.getContext('2d')
+  canvas.width = window.innerWidth - 10
+  canvas.height = window.innerHeight - 10
+  ctx.strokeStyle = 'teal'
+  ctx.lineCap = 'round' // the "edge" (terminus) of the line
+  ctx.lineJoin = 'miter'
+  ctx.lineWidth = 5
+
+  let isDrawing = false
+  let lastX = 0
+  let lastY = 0
+
+  function draw (e) {
+    if (!isDrawing) return
+    ctx.beginPath()
+    ctx.moveTo(lastX, lastY)
+    ctx.lineTo(e.offsetX, e.offsetY)
+    ctx.stroke()
+    ;[lastX, lastY] = [e.offsetX, e.offsetY] // needed to make the lines "move"
+  }
+
+  canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true
+    ;[lastX, lastY] = [e.offsetX, e.offsetY] // not to start from x= 0 & y= 0
+  })
+  canvas.addEventListener('mousemove', draw)
+  canvas.addEventListener('mouseup', function () { isDrawing = false })
+  canvas.addEventListener('mouseout', function () { isDrawing = false })
+
+  // need to do
+
+  // var type = 'move' // or start, end
+  // var event = document.createEvent('Event')
+  // event.initEvent('touch' + type, true, true)
+
+  // canvas.addEventListener('touchmove', (e) => {
+  //   isDrawing = true
+  //   console.log(this)
+  //   ;[lastX, lastY] = [e.offsetX, e.offsetY] // not to start from x= 0 & y= 0
+  // })
+</script>
+
+<style>
+  html, body {
+    margin:0;
+  }
+  canvas {
+    border: 2px solid chocolate;
+  }
+</style>
+
+</body>
+</html>
