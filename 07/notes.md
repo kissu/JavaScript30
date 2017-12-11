@@ -20,7 +20,8 @@ array.splice(1, 0, "stuff", "to", "add") // add elements from the index 1
 array.splice(2, 2) // remove 2 elements from index 2
 ```
 
-Or other combinations ofc, complete examples can de found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice).
+Or other combinations ofc, complete examples can de found
+[here][1].
 
 ---
 
@@ -30,4 +31,9 @@ Or other combinations ofc, complete examples can de found [here](https://develop
 ```
 it takes the `begin` index and the `end-1` and return this range.
 
-Great examples [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) as always.
+Great examples
+[here][2].
+as always.
+
+[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+[2]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
