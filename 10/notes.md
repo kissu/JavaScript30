@@ -55,3 +55,4 @@ Use `childNodes` to go into the children in a nodeList & `getAttribute` to get
 - [ ] fix some tricky edge cases, like if user click+shift 3 times on the
   same checkbox (_who does that ?_)
 - [ ] try to refacto the code on my own way ? GL.
+- [ ] make a better UX, click on the label instead of **just** the checkbox.
