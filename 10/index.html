@@ -50,13 +50,13 @@
       font-weight: 200;
       border-left: 1px solid #D1E2FF;
     }
-
-
   </style>
    <!--
    The following is a common layout you would see in an email client.
 
-   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
+   When a user clicks a checkbox, holds Shift, and then clicks another checkbox
+   a few rows down, all the checkboxes inbetween those two checkboxes should be
+   checked.
 
   -->
   <div class="inbox">
@@ -99,6 +99,30 @@
   </div>
 
 <script>
+  const checkboxes = document.querySelectorAll('.inbox input[type=checkbox]')
+
+  function handleClick (e) {
+    let toBeChecked = false
+    if (e.shiftKey && this.checked) {
+      // e is the event we are triggering (is the event a click+shift ?)
+      // this is the checkbox we are clicking on (will it be checked after the click ?)
+      checkboxes.forEach(checkbox => {
+        if (checkbox === this || checkbox === previousClick) {
+        // if the checkbox we are iterating on is the one which is clicked with shift
+        // ↑ refers to the previous if test because of the this into an arrow function
+        // OR is it the last checked checkbox ?
+          toBeChecked = !toBeChecked
+        }
+        if (toBeChecked) checkbox.checked = true
+        // ↑ needed or if iterating from top to bottom, won't check the last one with
+        // regular kissu's way
+      })
+    }
+    previousClick = this // regular one, wo/ the shift
+  }
+
+  let previousClick
+  checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleClick))
 </script>
 </body>
 </html>
