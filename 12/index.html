@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+
+<script>
+  const stringToMatch = [...'yolo']
+  let index = 0
+
+  function checkKey (e) {
+    if (e.key === stringToMatch[index]) {
+      index += 1
+      if (index === stringToMatch.length) {
+        console.log('cheeki breeki >> https://youtu.be/j7B4ACeXBHU !')
+        index = 0
+      }
+    } else {
+      index = 0
+    }
+    console.log(index)
+  }
+
+  document.addEventListener('keyup', checkKey)
+</script>
+</body>
+</html>
