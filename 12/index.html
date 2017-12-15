@@ -8,13 +8,13 @@
 <body>
 
 <script>
-  const needToVerify = [89, 79, 76, 79]
+  const stringToMatch = [...'yolo']
   let index = 0
 
   function checkKey (e) {
-    if (e.keyCode === needToVerify[index]) {
+    if (e.key === stringToMatch[index]) {
       index += 1
-      if (index === needToVerify.length) {
+      if (index === stringToMatch.length) {
         console.log('cheeki breeki >> https://youtu.be/j7B4ACeXBHU !')
         index = 0
       }
