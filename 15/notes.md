@@ -1,5 +1,7 @@
 # [Super cool] Challenge 15, Event Delegation & Local Storage
-Super coooooool exercise
+Super coooooool exercise on how to practice a lot of stuff. It's not hard but
+  I've discovered event delegation and localStorage. In pair with some HTML
+  `contenteditable="true"`, we maybe can make some cool stuff ! :hand:
 
 ### What I learned
 If we have a form like that
@@ -68,11 +70,22 @@ itemsList.addEventListener('click', toggleDone)
 ```
 
 ### Small things
-We do use the classic `e.preventDefault()` to not reload the page when we
+- We do use the classic `e.preventDefault()` to not reload the page when we
   submit the form.
 
-Check the CSS to see how make these kind of custom checkboxes.
+- Check the CSS to see how make these kind of custom checkboxes.
 
+- `items.length = 0` is a good way to clear a `const` array object.
+
+- Reminder, if you want a picture that is hosted at this url:
+  https://unsplash.com/photos/XsK9Qm7TWqs, just prepend `source` and remove
+  `photos`, that way you will be able to use just the image. The url should be
+  https://source.unsplash.com/XsK9Qm7TWqs in our case.
+
+- To insert this kind of unicode symbol `✓`, you can just pasta it in your CSS
+  like that or you need to write it's HEX code like `\2713`.
+
+- JSON parse/stringify ↷
 ```js
 let objectVar = {name: 'yolo', age: 21 }
 
@@ -86,11 +99,17 @@ let objectVar2 = JSON.parse(stringVar) // takes a string, returns an object (JSO
 If you need to pass it manually (not with a variable), use the single quotes `'`
 like `JSON.parse('{"name":"yolo","age":21}')`.
 
+### Easy stuff to add
+
+- [x] check all button
+- [x] uncheck all button
+- [x] delete all button
+
+In function `stateAllItems`, I've used a closure. [[MDN][3]]
+
+Definition: `A closure is the combination of a function and the lexical
+ environment within which that function was declared.`
+
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 [2]: https://developer.mozilla.org/en-US/docs/Web/API/Event/target
-
-### Stuff to do
-
-- [ ] delete all button
-- [ ] check all button
-- [ ] uncheck all button
+[3]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures

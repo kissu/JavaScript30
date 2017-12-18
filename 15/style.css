@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  background:url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat;
+  background:url('https://source.unsplash.com/XsK9Qm7TWqs') center no-repeat;
   background-size:cover;
   min-height:100vh;
   display:flex;
@@ -62,15 +62,29 @@ h2 {
 }
 
 .plates input:checked + label:before {
-  content: '★';
+  content: '\2713';
 }
 
-.add-items {
+.add-items, .additionnal-stuff {
   margin-top: 20px;
 }
 
-.add-items input {
+.add-items input, .additionnal-stuff input {
   padding:10px;
   outline:0;
   border:1px solid rgba(0,0,0,0.1);
+}
+
+[class*='-all'] {
+  color: #fff;
+  font-weight: bold;
+}
+.check-all {
+  background-color: #48BF84;
+}
+.uncheck-all {
+  background-color: #34D1BF;
+}
+.delete-all {
+  background-color: #D30C7B;
 }
