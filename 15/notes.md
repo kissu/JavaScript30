@@ -17,7 +17,8 @@ We can get the value entered in the field with this kind of selector
 ```js
 (document.querySelector('[id=user-input]')).value
 ```
-but it's usually better to use `this.querySelector` and not the    `document` one. That way, you don't need an id on it, you can just use
+but it's usually better to use `this.querySelector` and not the
+`document` one. That way, you don't need an id on it, you can just use
 ```js
 (this.querySelector('[name=item]')).value
 ```
