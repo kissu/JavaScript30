@@ -20,6 +20,11 @@ svg {
   margin-bottom: 50px;
 }
 
+.class {
+  margin-top: 12px;
+}
+
+
 .wrapper {
   padding: 20px;
   max-width: 350px;
