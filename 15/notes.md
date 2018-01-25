@@ -22,7 +22,11 @@ but it's usually better to use `this.querySelector` and not the
 ```js
 (this.querySelector('[name=item]')).value
 ```
-because it will be scoped thanks to the `eventListener`.
+because it will be scoped thanks to the `eventListener ezijezijri ezzerer`.
+
+```js
+
+```
 
 `populateList` is used to fetch the submitted value in the form, add it to the
   array of plates and display the plates in the HTML above the form.
